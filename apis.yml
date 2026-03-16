@@ -1,5 +1,21 @@
 aid: microsoft-onedrive
+name: Microsoft OneDrive
+description: >-
+  Microsoft OneDrive is a cloud-based file storage and synchronization service.
+  It provides APIs through Microsoft Graph for accessing, managing, and sharing
+  files and folders stored in OneDrive personal and OneDrive for Business.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - File Storage
+  - Cloud Storage
+  - Files
+  - Microsoft 365
+  - Microsoft
 url: https://raw.githubusercontent.com/api-evangelist/microsoft-onedrive/refs/heads/main/apis.yml
+created: '2024-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 apis:
   - aid: microsoft-onedrive:graph-drive-api
     name: Microsoft Graph OneDrive API
@@ -8,14 +24,14 @@ apis:
       - Cloud Storage
       - Microsoft Graph
       - Files
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://graph.microsoft.com/v1.0/
     humanURL: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
     properties:
       - url: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
         type: Documentation
       - url: https://learn.microsoft.com/en-us/graph/api/resources/onedrive
-        type: API Reference
+        type: Reference
     description: >-
       The Microsoft Graph OneDrive API provides programmatic access to
       OneDrive personal and OneDrive for Business file storage. Developers
@@ -29,8 +45,7 @@ apis:
       - File Picker
       - UI Component
       - Files
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    baseURL: https://api.example.com
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     humanURL: https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/
     properties:
       - url: https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/
@@ -44,8 +59,10 @@ apis:
 common:
   - type: Portal
     url: https://portal.azure.com/
-  - type: Developer Portal
-    url: https://developer.microsoft.com/
+  - type: Website
+    url: https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/onedrive/developer/
   - type: Authentication
     url: https://learn.microsoft.com/en-us/graph/auth/
   - type: SDKs
@@ -57,5 +74,5 @@ common:
   - type: Support
     url: https://support.microsoft.com/
 maintainers:
-  - name: Kin Lane
+  - FN: Kin Lane
     email: kin@apievangelist.com
