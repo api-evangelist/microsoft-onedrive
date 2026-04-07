@@ -7,11 +7,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - File Storage
   - Cloud Storage
+  - File Storage
   - Files
-  - Microsoft 365
   - Microsoft
+  - Microsoft 365
 url: https://raw.githubusercontent.com/api-evangelist/microsoft-onedrive/refs/heads/main/apis.yml
 created: '2024-01-01'
 modified: '2026-03-16'
@@ -20,10 +20,10 @@ apis:
   - aid: microsoft-onedrive:graph-drive-api
     name: Microsoft Graph OneDrive API
     tags:
-      - File Storage
       - Cloud Storage
-      - Microsoft Graph
+      - File Storage
       - Files
+      - Microsoft Graph
     image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://graph.microsoft.com/v1.0/
     humanURL: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
@@ -43,8 +43,8 @@ apis:
     name: OneDrive File Picker
     tags:
       - File Picker
-      - UI Component
       - Files
+      - UI Component
     image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     humanURL: https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/
     properties:
