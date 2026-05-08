@@ -32,6 +32,8 @@ apis:
         type: Documentation
       - url: https://learn.microsoft.com/en-us/graph/api/resources/onedrive
         type: Reference
+      - url: openapi/microsoft-onedrive-openapi.yml
+        type: OpenAPI
     description: >-
       The Microsoft Graph OneDrive API provides programmatic access to
       OneDrive personal and OneDrive for Business file storage. Developers
