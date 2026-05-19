@@ -1,0 +1,186 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft OneDrive API (Microsoft Graph) — Sharing
+  description: 'Microsoft OneDrive API (Microsoft Graph) — Sharing. 4 operations. Lead operation: Create sharing link. Self-contained
+    Naftiko capability covering one Microsoft Onedrive business surface.'
+  tags:
+  - Microsoft Onedrive
+  - Sharing
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_ONEDRIVE_API_KEY: MICROSOFT_ONEDRIVE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-onedrive-sharing
+    baseUri: https://graph.microsoft.com/v1.0
+    description: Microsoft OneDrive API (Microsoft Graph) — Sharing business capability. Self-contained, no shared references.
+    resources:
+    - name: drives-driveId-items-itemId-createLink
+      path: /drives/{driveId}/items/{itemId}/createLink
+      operations:
+      - name: createsharinglink
+        method: POST
+        description: Create sharing link
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: drives-driveId-items-itemId-invite
+      path: /drives/{driveId}/items/{itemId}/invite
+      operations:
+      - name: invitetodriveitem
+        method: POST
+        description: Send sharing invitation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: drives-driveId-items-itemId-permissions
+      path: /drives/{driveId}/items/{itemId}/permissions
+      operations:
+      - name: listdriveitempermissions
+        method: GET
+        description: List driveItem permissions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: shares-shareId
+      path: /shares/{shareId}
+      operations:
+      - name: getshareditem
+        method: GET
+        description: Access driveItem by share id
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_ONEDRIVE_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-onedrive-sharing-rest
+    port: 8080
+    description: REST adapter for Microsoft OneDrive API (Microsoft Graph) — Sharing. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/drives/{driveid}/items/{itemid}/createlink
+      name: drives-driveid-items-itemid-createlink
+      description: REST surface for drives-driveId-items-itemId-createLink.
+      operations:
+      - method: POST
+        name: createsharinglink
+        description: Create sharing link
+        call: microsoft-onedrive-sharing.createsharinglink
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/drives/{driveid}/items/{itemid}/invite
+      name: drives-driveid-items-itemid-invite
+      description: REST surface for drives-driveId-items-itemId-invite.
+      operations:
+      - method: POST
+        name: invitetodriveitem
+        description: Send sharing invitation
+        call: microsoft-onedrive-sharing.invitetodriveitem
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/drives/{driveid}/items/{itemid}/permissions
+      name: drives-driveid-items-itemid-permissions
+      description: REST surface for drives-driveId-items-itemId-permissions.
+      operations:
+      - method: GET
+        name: listdriveitempermissions
+        description: List driveItem permissions
+        call: microsoft-onedrive-sharing.listdriveitempermissions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/shares/{shareid}
+      name: shares-shareid
+      description: REST surface for shares-shareId.
+      operations:
+      - method: GET
+        name: getshareditem
+        description: Access driveItem by share id
+        call: microsoft-onedrive-sharing.getshareditem
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-onedrive-sharing-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Microsoft OneDrive API (Microsoft Graph) — Sharing. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: create-sharing-link
+      description: Create sharing link
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-onedrive-sharing.createsharinglink
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: send-sharing-invitation
+      description: Send sharing invitation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-onedrive-sharing.invitetodriveitem
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-driveitem-permissions
+      description: List driveItem permissions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-onedrive-sharing.listdriveitempermissions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: access-driveitem-share-id
+      description: Access driveItem by share id
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-onedrive-sharing.getshareditem
+      outputParameters:
+      - type: object
+        mapping: $.
