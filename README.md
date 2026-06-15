@@ -2,7 +2,11 @@
 
 Microsoft OneDrive is a cloud-based file storage and synchronization service. It provides APIs through Microsoft Graph for accessing, managing, and sharing files and folders stored in OneDrive personal and OneDrive for Business.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/microsoft-onedrive/refs/heads/main/apis.yml)
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/microsoft-onedrive/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/microsoft-onedrive/refs/heads/main/apis.yml)
+
+## Scope
+
+- **Type:** Index
 
 ## Tags
 
@@ -15,16 +19,16 @@ Microsoft OneDrive is a cloud-based file storage and synchronization service. It
 ## Timestamps
 
 - **Created:** 2024-01-01
-- **Modified:** 2026-04-28
+- **Modified:** 2026-05-19
 
 ## APIs
 
 ### Microsoft Graph OneDrive API
+
 The Microsoft Graph OneDrive API provides programmatic access to OneDrive personal and OneDrive for Business file storage. Developers can upload, download, search, and share files and folders, manage permissions, track changes with delta queries, and create sharing links. The API supports large file uploads with resumable sessions and real-time notifications via webhooks.
 
-**Human URL:** [https://learn.microsoft.com/en-us/onedrive/developer/rest-api/](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/)
-
-**Base URL:** https://graph.microsoft.com/v1.0/
+- **Human URL:** [https://learn.microsoft.com/en-us/onedrive/developer/rest-api/](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/)
+- **Base URL:** `https://graph.microsoft.com/v1.0/`
 
 #### Tags
 
@@ -37,11 +41,15 @@ The Microsoft Graph OneDrive API provides programmatic access to OneDrive person
 
 - [Documentation](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/)
 - [Reference](https://learn.microsoft.com/en-us/graph/api/resources/onedrive)
+- [OpenAPI](openapi/microsoft-onedrive-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/microsoft-onedrive.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/microsoft-onedrive.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ### OneDrive File Picker
+
 The OneDrive File Picker is a JavaScript SDK that provides a pre-built UI component for selecting files from OneDrive within web applications. It handles authentication, file browsing, and selection, returning file metadata and download URLs to the calling application without requiring direct API integration.
 
-**Human URL:** [https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/](https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/)
+- **Human URL:** [https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/](https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/)
 
 #### Tags
 
@@ -52,20 +60,23 @@ The OneDrive File Picker is a JavaScript SDK that provides a pre-built UI compon
 #### Properties
 
 - [Documentation](https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/)
+- [Postman Collection](collections/microsoft-onedrive.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/microsoft-onedrive.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ## Common Properties
 
+- [GitHub Organization](https://github.com/OneDrive)
 - [Portal](https://portal.azure.com/)
 - [Website](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage)
 - [Documentation](https://learn.microsoft.com/en-us/onedrive/developer/)
 - [Authentication](https://learn.microsoft.com/en-us/graph/auth/)
-- [SDKs](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview)
+- [S D Ks](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview)
 - [Terms of Service](https://www.microsoft.com/en-us/legal/terms-of-use)
 - [Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement)
 - [Support](https://support.microsoft.com/)
+- [Integrations](https://www.microsoft.com/en-us/marketplace)
 
 ## Maintainers
 
 **FN:** Kin Lane
-
 **Email:** kin@apievangelist.com

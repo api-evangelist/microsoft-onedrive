@@ -1,0 +1,425 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft OneDrive API (Microsoft Graph)",
+    "version": "v1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Drives",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the user's default OneDrive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/drive"
+          },
+          "docs": "Get the user's default OneDrive"
+        },
+        {
+          "info": {
+            "name": "List drives available to the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/drives"
+          },
+          "docs": "List drives available to the user"
+        },
+        {
+          "info": {
+            "name": "Get a specific drive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a specific drive"
+        },
+        {
+          "info": {
+            "name": "Get default drive for SharePoint site",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/sites/:siteId/drive",
+            "params": [
+              {
+                "name": "siteId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get default drive for SharePoint site"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "DriveItems",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get root driveItem of a drive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/root",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get root driveItem of a drive"
+        },
+        {
+          "info": {
+            "name": "List children of root",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/root/children",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List children of root"
+        },
+        {
+          "info": {
+            "name": "Get driveItem by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get driveItem by id"
+        },
+        {
+          "info": {
+            "name": "Update driveItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update driveItem"
+        },
+        {
+          "info": {
+            "name": "Delete driveItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete driveItem"
+        },
+        {
+          "info": {
+            "name": "List children of driveItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId/children",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List children of driveItem"
+        },
+        {
+          "info": {
+            "name": "Create folder in driveItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId/children",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create folder in driveItem"
+        },
+        {
+          "info": {
+            "name": "Download file content",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId/content",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download file content"
+        },
+        {
+          "info": {
+            "name": "Upload file content (small file replace)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId/content",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Upload file content (small file replace)"
+        },
+        {
+          "info": {
+            "name": "Copy driveItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId/copy",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Copy driveItem"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Sharing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create sharing link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId/createLink",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create sharing link"
+        },
+        {
+          "info": {
+            "name": "Send sharing invitation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId/invite",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send sharing invitation"
+        },
+        {
+          "info": {
+            "name": "List driveItem permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId/permissions",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List driveItem permissions"
+        },
+        {
+          "info": {
+            "name": "Access driveItem by share id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/shares/:shareId",
+            "params": [
+              {
+                "name": "shareId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Access driveItem by share id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
