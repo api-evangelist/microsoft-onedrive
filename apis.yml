@@ -54,6 +54,10 @@ apis:
       OneDrive within web applications. It handles authentication, file browsing, and selection, returning file metadata
       and download URLs to the calling application without requiring direct API integration.
 common:
+  - type: DomainSecurity
+    url: security/microsoft-onedrive-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-onedrive-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/OneDrive
   - type: Portal
