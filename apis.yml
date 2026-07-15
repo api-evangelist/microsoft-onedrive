@@ -54,6 +54,8 @@ apis:
       OneDrive within web applications. It handles authentication, file browsing, and selection, returning file metadata
       and download URLs to the calling application without requiring direct API integration.
 common:
+  - type: AgenticAccess
+    url: agentic-access/microsoft-onedrive-agentic-access.yml
   - type: DomainSecurity
     url: security/microsoft-onedrive-domain-security.yml
   - type: Authentication
