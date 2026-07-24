@@ -1,0 +1,92 @@
+openapi: 3.1.0
+info:
+  title: Microsoft OneDrive API (Microsoft Graph) DriveItems Drives API
+  description: Minimal OpenAPI definition for the OneDrive REST API exposed via Microsoft Graph for working with drives and driveItems including OneDrive, OneDrive for Business, and SharePoint document libraries.
+  version: v1.0
+  x-generated-from: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://graph.microsoft.com/v1.0
+  description: Microsoft Graph v1.0
+security:
+- bearerAuth: []
+tags:
+- name: Drives
+paths:
+  /me/drive:
+    get:
+      tags:
+      - Drives
+      summary: Get the user's default OneDrive
+      operationId: getMyDrive
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+  /me/drives:
+    get:
+      tags:
+      - Drives
+      summary: List drives available to the user
+      operationId: listMyDrives
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+  /drives/{driveId}:
+    parameters:
+    - $ref: '#/components/parameters/DriveId'
+    get:
+      tags:
+      - Drives
+      summary: Get a specific drive
+      operationId: getDrive
+      responses:
+        '200':
+          description: OK
+  /sites/{siteId}/drive:
+    parameters:
+    - in: path
+      name: siteId
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Drives
+      summary: Get default drive for SharePoint site
+      operationId: getSiteDrive
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+    GenericObject:
+      type: object
+      additionalProperties: true
+  parameters:
+    DriveId:
+      in: path
+      name: driveId
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

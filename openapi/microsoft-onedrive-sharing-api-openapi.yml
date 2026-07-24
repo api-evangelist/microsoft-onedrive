@@ -1,0 +1,113 @@
+openapi: 3.1.0
+info:
+  title: Microsoft OneDrive API (Microsoft Graph) DriveItems Sharing API
+  description: Minimal OpenAPI definition for the OneDrive REST API exposed via Microsoft Graph for working with drives and driveItems including OneDrive, OneDrive for Business, and SharePoint document libraries.
+  version: v1.0
+  x-generated-from: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://graph.microsoft.com/v1.0
+  description: Microsoft Graph v1.0
+security:
+- bearerAuth: []
+tags:
+- name: Sharing
+paths:
+  /drives/{driveId}/items/{itemId}/createLink:
+    parameters:
+    - $ref: '#/components/parameters/DriveId'
+    - $ref: '#/components/parameters/ItemId'
+    post:
+      tags:
+      - Sharing
+      summary: Create sharing link
+      operationId: createSharingLink
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+  /drives/{driveId}/items/{itemId}/invite:
+    parameters:
+    - $ref: '#/components/parameters/DriveId'
+    - $ref: '#/components/parameters/ItemId'
+    post:
+      tags:
+      - Sharing
+      summary: Send sharing invitation
+      operationId: inviteToDriveItem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+  /drives/{driveId}/items/{itemId}/permissions:
+    parameters:
+    - $ref: '#/components/parameters/DriveId'
+    - $ref: '#/components/parameters/ItemId'
+    get:
+      tags:
+      - Sharing
+      summary: List driveItem permissions
+      operationId: listDriveItemPermissions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+  /shares/{shareId}:
+    parameters:
+    - in: path
+      name: shareId
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Sharing
+      summary: Access driveItem by share id
+      operationId: getSharedItem
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+    GenericObject:
+      type: object
+      additionalProperties: true
+  parameters:
+    ItemId:
+      in: path
+      name: itemId
+      required: true
+      schema:
+        type: string
+    DriveId:
+      in: path
+      name: driveId
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

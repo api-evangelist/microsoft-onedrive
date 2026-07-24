@@ -1,0 +1,188 @@
+openapi: 3.1.0
+info:
+  title: Microsoft OneDrive API (Microsoft Graph) DriveItems API
+  description: Minimal OpenAPI definition for the OneDrive REST API exposed via Microsoft Graph for working with drives and driveItems including OneDrive, OneDrive for Business, and SharePoint document libraries.
+  version: v1.0
+  x-generated-from: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://graph.microsoft.com/v1.0
+  description: Microsoft Graph v1.0
+security:
+- bearerAuth: []
+tags:
+- name: DriveItems
+paths:
+  /drives/{driveId}/root:
+    parameters:
+    - $ref: '#/components/parameters/DriveId'
+    get:
+      tags:
+      - DriveItems
+      summary: Get root driveItem of a drive
+      operationId: getDriveRoot
+      responses:
+        '200':
+          description: OK
+  /drives/{driveId}/root/children:
+    parameters:
+    - $ref: '#/components/parameters/DriveId'
+    get:
+      tags:
+      - DriveItems
+      summary: List children of root
+      operationId: listDriveRootChildren
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+  /drives/{driveId}/items/{itemId}:
+    parameters:
+    - $ref: '#/components/parameters/DriveId'
+    - $ref: '#/components/parameters/ItemId'
+    get:
+      tags:
+      - DriveItems
+      summary: Get driveItem by id
+      operationId: getDriveItem
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+      - DriveItems
+      summary: Update driveItem
+      operationId: updateDriveItem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - DriveItems
+      summary: Delete driveItem
+      operationId: deleteDriveItem
+      responses:
+        '204':
+          description: No Content
+  /drives/{driveId}/items/{itemId}/children:
+    parameters:
+    - $ref: '#/components/parameters/DriveId'
+    - $ref: '#/components/parameters/ItemId'
+    get:
+      tags:
+      - DriveItems
+      summary: List children of driveItem
+      operationId: listDriveItemChildren
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags:
+      - DriveItems
+      summary: Create folder in driveItem
+      operationId: createFolder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+  /drives/{driveId}/items/{itemId}/content:
+    parameters:
+    - $ref: '#/components/parameters/DriveId'
+    - $ref: '#/components/parameters/ItemId'
+    get:
+      tags:
+      - DriveItems
+      summary: Download file content
+      operationId: downloadDriveItemContent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+    put:
+      tags:
+      - DriveItems
+      summary: Upload file content (small file replace)
+      operationId: uploadDriveItemContent
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+  /drives/{driveId}/items/{itemId}/copy:
+    parameters:
+    - $ref: '#/components/parameters/DriveId'
+    - $ref: '#/components/parameters/ItemId'
+    post:
+      tags:
+      - DriveItems
+      summary: Copy driveItem
+      operationId: copyDriveItem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '202':
+          description: Accepted
+components:
+  schemas:
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+    GenericObject:
+      type: object
+      additionalProperties: true
+  parameters:
+    ItemId:
+      in: path
+      name: itemId
+      required: true
+      schema:
+        type: string
+    DriveId:
+      in: path
+      name: driveId
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
