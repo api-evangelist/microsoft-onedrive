@@ -4,7 +4,20 @@ description: >-
   Microsoft OneDrive is a cloud-based file storage and synchronization service. It provides APIs through Microsoft Graph
   for accessing, managing, and sharing files and folders stored in OneDrive personal and OneDrive for Business.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-onedrive.png
 tags:
   - Cloud Storage
   - File Storage
@@ -16,43 +29,64 @@ created: '2024-01-01'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: microsoft-onedrive:graph-drive-api
-    name: Microsoft Graph OneDrive API
-    tags:
-      - Cloud Storage
-      - File Storage
-      - Files
-      - Microsoft Graph
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://graph.microsoft.com/v1.0/
-    humanURL: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
-    properties:
-      - url: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
-        type: Documentation
-      - url: https://learn.microsoft.com/en-us/graph/api/resources/onedrive
-        type: Reference
-      - url: openapi/microsoft-onedrive-openapi.yml
-        type: OpenAPI
-    description: >-
-      The Microsoft Graph OneDrive API provides programmatic access to OneDrive personal and OneDrive for Business file
-      storage. Developers can upload, download, search, and share files and folders, manage permissions, track changes
-      with delta queries, and create sharing links. The API supports large file uploads with resumable sessions and
-      real-time notifications via webhooks.
-  - aid: microsoft-onedrive:file-picker
-    name: OneDrive File Picker
-    tags:
-      - File Picker
-      - Files
-      - UI Component
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/
-    properties:
-      - url: https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/
-        type: Documentation
-    description: >-
-      The OneDrive File Picker is a JavaScript SDK that provides a pre-built UI component for selecting files from
-      OneDrive within web applications. It handles authentication, file browsing, and selection, returning file metadata
-      and download URLs to the calling application without requiring direct API integration.
+- aid: microsoft-onedrive:file-picker
+  name: OneDrive File Picker
+  tags:
+  - File Picker
+  - Files
+  - UI Component
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/
+  properties:
+  - url: https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/
+    type: Documentation
+  description: >-
+    The OneDrive File Picker is a JavaScript SDK that provides a pre-built UI component for selecting
+    files from OneDrive within web applications. It handles authentication, file browsing, and selection,
+    returning file metadata and download URLs to the calling application without requiring direct API
+    integration.
+- aid: microsoft-onedrive:microsoft-onedrive-driveitems-api
+  name: Microsoft OneDrive DriveItems API
+  description: The DriveItems API from Microsoft OneDrive — 6 operation(s) for driveitems.
+  humanURL: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
+  baseURL: https://graph.microsoft.com/v1.0/
+  tags:
+  - DriveItems
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-onedrive-driveitems-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
+  - type: Reference
+    url: https://learn.microsoft.com/en-us/graph/api/resources/onedrive
+- aid: microsoft-onedrive:microsoft-onedrive-drives-api
+  name: Microsoft OneDrive Drives API
+  description: The Drives API from Microsoft OneDrive — 4 operation(s) for drives.
+  humanURL: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
+  baseURL: https://graph.microsoft.com/v1.0/
+  tags:
+  - Drives
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-onedrive-drives-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
+  - type: Reference
+    url: https://learn.microsoft.com/en-us/graph/api/resources/onedrive
+- aid: microsoft-onedrive:microsoft-onedrive-sharing-api
+  name: Microsoft OneDrive Sharing API
+  description: The Sharing API from Microsoft OneDrive — 4 operation(s) for sharing.
+  humanURL: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
+  baseURL: https://graph.microsoft.com/v1.0/
+  tags:
+  - Sharing
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-onedrive-sharing-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
+  - type: Reference
+    url: https://learn.microsoft.com/en-us/graph/api/resources/onedrive
 common:
   - type: AgenticAccess
     url: agentic-access/microsoft-onedrive-agentic-access.yml
