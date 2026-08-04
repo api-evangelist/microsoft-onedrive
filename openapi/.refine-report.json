@@ -1,0 +1,18 @@
+{
+  "provider": "microsoft-onedrive",
+  "sources": [
+    "microsoft-onedrive-driveitems-api-openapi.yml",
+    "microsoft-onedrive-drives-api-openapi.yml",
+    "microsoft-onedrive-sharing-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-onedrive-driveitems-api-openapi.yml",
+    "microsoft-onedrive-drives-api-openapi.yml",
+    "microsoft-onedrive-sharing-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
