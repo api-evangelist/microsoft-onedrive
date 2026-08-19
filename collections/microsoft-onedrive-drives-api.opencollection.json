@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft OneDrive API (Microsoft Graph) DriveItems Drives API",
+    "version": "v1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Drives",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the user's default OneDrive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/drive"
+          },
+          "docs": "Get the user's default OneDrive"
+        },
+        {
+          "info": {
+            "name": "List drives available to the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/drives"
+          },
+          "docs": "List drives available to the user"
+        },
+        {
+          "info": {
+            "name": "Get a specific drive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a specific drive"
+        },
+        {
+          "info": {
+            "name": "Get default drive for SharePoint site",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/sites/:siteId/drive",
+            "params": [
+              {
+                "name": "siteId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get default drive for SharePoint site"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

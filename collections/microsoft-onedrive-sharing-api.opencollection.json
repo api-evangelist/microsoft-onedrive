@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft OneDrive API (Microsoft Graph) DriveItems Sharing API",
+    "version": "v1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sharing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create sharing link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId/createLink",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create sharing link"
+        },
+        {
+          "info": {
+            "name": "Send sharing invitation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId/invite",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send sharing invitation"
+        },
+        {
+          "info": {
+            "name": "List driveItem permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/drives/:driveId/items/:itemId/permissions",
+            "params": [
+              {
+                "name": "driveId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List driveItem permissions"
+        },
+        {
+          "info": {
+            "name": "Access driveItem by share id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/shares/:shareId",
+            "params": [
+              {
+                "name": "shareId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Access driveItem by share id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
