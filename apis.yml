@@ -21,6 +21,12 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-
 tags:
   - Cloud Storage
   - File Storage
+  - File
+  - Microsoft
+  - Microsoft-365
+tags_raw:
+  - Cloud Storage
+  - File Storage
   - Files
   - Microsoft
   - Microsoft 365
@@ -32,6 +38,10 @@ apis:
 - aid: microsoft-onedrive:file-picker
   name: OneDrive File Picker
   tags:
+  - File Picker
+  - File
+  - UI Component
+  tags_raw:
   - File Picker
   - Files
   - UI Component
