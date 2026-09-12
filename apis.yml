@@ -1,8 +1,6 @@
 aid: microsoft-onedrive
 name: Microsoft OneDrive
-description: >-
-  Microsoft OneDrive is a cloud-based file storage and synchronization service. It provides APIs through Microsoft Graph
-  for accessing, managing, and sharing files and folders stored in OneDrive personal and OneDrive for Business.
+description: Microsoft OneDrive is a cloud-based file storage and synchronization service. It provides APIs through Microsoft Graph for accessing, managing, and sharing files and folders stored in OneDrive personal and OneDrive for Business.
 type: Index
 deliveryModel:
   model: saas
@@ -32,18 +30,18 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-onedrive.png
 tags:
-  - Cloud Storage
-  - File Storage
-  - File
-  - Microsoft
-  - Microsoft-365
+- Cloud Storage
+- File Storage
+- File
+- Microsoft
+- Microsoft-365
 tags_raw:
-  - Cloud Storage
-  - File Storage
-  - Files
-  - Microsoft
-  - Microsoft 365
-url: https://raw.githubusercontent.com/api-evangelist/microsoft-onedrive/refs/heads/main/apis.yml
+- Cloud Storage
+- File Storage
+- Files
+- Microsoft
+- Microsoft 365
+url: https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage
 created: '2024-01-01'
 modified: '2026-05-19'
 specificationVersion: '0.23'
@@ -63,11 +61,7 @@ apis:
   properties:
   - url: https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/
     type: Documentation
-  description: >-
-    The OneDrive File Picker is a JavaScript SDK that provides a pre-built UI component for selecting
-    files from OneDrive within web applications. It handles authentication, file browsing, and selection,
-    returning file metadata and download URLs to the calling application without requiring direct API
-    integration.
+  description: The OneDrive File Picker is a JavaScript SDK that provides a pre-built UI component for selecting files from OneDrive within web applications. It handles authentication, file browsing, and selection, returning file metadata and download URLs to the calling application without requiring direct API integration.
 - aid: microsoft-onedrive:microsoft-onedrive-driveitems-api
   name: Microsoft OneDrive DriveItems API
   description: The DriveItems API from Microsoft OneDrive — 6 operation(s) for driveitems.
@@ -110,45 +104,58 @@ apis:
     url: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
   - type: Reference
     url: https://learn.microsoft.com/en-us/graph/api/resources/onedrive
-common:
-  - type: AgenticAccess
-    url: agentic-access/microsoft-onedrive-agentic-access.yml
-  - type: DomainSecurity
-    url: security/microsoft-onedrive-domain-security.yml
-  - type: Authentication
-    url: authentication/microsoft-onedrive-authentication.yml
-  - type: GitHubOrganization
-    url: https://github.com/OneDrive
-  - type: Portal
-    url: https://portal.azure.com/
-  - type: Website
-    url: https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage
+- name: OneDrive
+  description: File Sharing and Storage
+  humanURL: https://developer.microsoft.com/onedrive
+  baseURL: https://developer.microsoft.com/onedrive
+  tags:
+  - Cloud Storage And File Sharing
+  properties:
   - type: Documentation
-    url: https://learn.microsoft.com/en-us/onedrive/developer/
-  - type: Authentication
-    url: https://learn.microsoft.com/en-us/graph/auth/
-  - type: SDKs
-    url: https://learn.microsoft.com/en-us/graph/sdks/sdks-overview
-  - type: TermsOfService
-    url: https://www.microsoft.com/en-us/legal/terms-of-use
-  - type: PrivacyPolicy
-    url: https://privacy.microsoft.com/en-us/privacystatement
-  - type: Support
-    url: https://support.microsoft.com/
-  - type: Integrations
-    url: https://www.microsoft.com/en-us/marketplace
+    url: https://developer.microsoft.com/onedrive
+common:
+- type: VulnerabilityDisclosure
+  url: security/microsoft-onedrive-vulnerability-disclosure.yml
+- type: PublicAPIsListing
+  url: https://github.com/public-apis/public-apis
+- type: AgenticAccess
+  url: agentic-access/microsoft-onedrive-agentic-access.yml
+- type: DomainSecurity
+  url: security/microsoft-onedrive-domain-security.yml
+- type: Authentication
+  url: authentication/microsoft-onedrive-authentication.yml
+- type: GitHubOrganization
+  url: https://github.com/OneDrive
+- type: Portal
+  url: https://portal.azure.com/
+- type: Website
+  url: https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage
+- type: Documentation
+  url: https://learn.microsoft.com/en-us/onedrive/developer/
+- type: Authentication
+  url: https://learn.microsoft.com/en-us/graph/auth/
+- type: SDKs
+  url: https://learn.microsoft.com/en-us/graph/sdks/sdks-overview
+- type: TermsOfService
+  url: https://www.microsoft.com/en-us/legal/terms-of-use
+- type: PrivacyPolicy
+  url: https://privacy.microsoft.com/en-us/privacystatement
+- type: Support
+  url: https://support.microsoft.com/
+- type: Integrations
+  url: https://www.microsoft.com/en-us/marketplace
 integrations:
-  - name: Microsoft
-  - name: Two people looking at a computer.
-  - name: This is placeholder text for
-  - name: IDC
-  - name: Nationwide
-  - name: RSA company
-  - name: Teleperformance
-  - name: A woman smiling at a laptop
-  - name: A man holding a laptop.
+- name: Microsoft
+- name: Two people looking at a computer.
+- name: This is placeholder text for
+- name: IDC
+- name: Nationwide
+- name: RSA company
+- name: Teleperformance
+- name: A woman smiling at a laptop
+- name: A man holding a laptop.
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
-x-parent: microsoft
+- FN: Kin Lane
+  email: kin@apievangelist.com
+x-parent: microsoft-365
 x-relationship: product
