@@ -61,21 +61,11 @@ apis:
   properties:
   - url: https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/
     type: Documentation
-  description: The OneDrive File Picker is a JavaScript SDK that provides a pre-built UI component for selecting files from OneDrive within web applications. It handles authentication, file browsing, and selection, returning file metadata and download URLs to the calling application without requiring direct API integration.
-- aid: microsoft-onedrive:microsoft-onedrive-driveitems-api
-  name: Microsoft OneDrive DriveItems API
-  description: The DriveItems API from Microsoft OneDrive — 6 operation(s) for driveitems.
-  humanURL: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
-  baseURL: https://graph.microsoft.com/v1.0/
-  tags:
-  - DriveItems
-  properties:
-  - type: OpenAPI
-    url: openapi/microsoft-onedrive-driveitems-api-openapi.yml
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
-  - type: Reference
-    url: https://learn.microsoft.com/en-us/graph/api/resources/onedrive
+  description: >-
+    The OneDrive File Picker is a JavaScript SDK that provides a pre-built UI component for selecting
+    files from OneDrive within web applications. It handles authentication, file browsing, and selection,
+    returning file metadata and download URLs to the calling application without requiring direct API
+    integration.
 - aid: microsoft-onedrive:microsoft-onedrive-drives-api
   name: Microsoft OneDrive Drives API
   description: The Drives API from Microsoft OneDrive — 4 operation(s) for drives.
@@ -113,6 +103,20 @@ apis:
   properties:
   - type: Documentation
     url: https://developer.microsoft.com/onedrive
+- aid: microsoft-onedrive:microsoft-onedrive-drive-items-api
+  name: Microsoft OneDrive Drive Items API
+  description: The Drive Items API from Microsoft OneDrive — 6 operation(s) for drive items.
+  humanURL: https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/
+  baseURL: https://graph.microsoft.com/v1.0/
+  tags:
+  - Drive Items
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-onedrive-drive-items-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
+  - type: Reference
+    url: https://learn.microsoft.com/en-us/graph/api/resources/onedrive
 common:
 - type: VulnerabilityDisclosure
   url: security/microsoft-onedrive-vulnerability-disclosure.yml
