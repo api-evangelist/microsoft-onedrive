@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Microsoft OneDrive API (Microsoft Graph) DriveItems Sharing API
+  title: Microsoft OneDrive API (Microsoft Graph) Sharing API
   description: Minimal OpenAPI definition for the OneDrive REST API exposed via Microsoft Graph for working with drives and driveItems including OneDrive, OneDrive for Business, and SharePoint document libraries.
   version: v1.0
   x-generated-from: https://learn.microsoft.com/en-us/onedrive/developer/rest-api/
@@ -81,6 +81,19 @@ paths:
         '200':
           description: OK
 components:
+  parameters:
+    DriveId:
+      in: path
+      name: driveId
+      required: true
+      schema:
+        type: string
+    ItemId:
+      in: path
+      name: itemId
+      required: true
+      schema:
+        type: string
   schemas:
     GenericList:
       type: object
@@ -93,19 +106,6 @@ components:
     GenericObject:
       type: object
       additionalProperties: true
-  parameters:
-    ItemId:
-      in: path
-      name: itemId
-      required: true
-      schema:
-        type: string
-    DriveId:
-      in: path
-      name: driveId
-      required: true
-      schema:
-        type: string
   securitySchemes:
     bearerAuth:
       type: http

@@ -11,14 +11,14 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: DriveItems
+- name: Drive Items
 paths:
   /drives/{driveId}/root:
     parameters:
     - $ref: '#/components/parameters/DriveId'
     get:
       tags:
-      - DriveItems
+      - Drive Items
       summary: Get root driveItem of a drive
       operationId: getDriveRoot
       responses:
@@ -29,7 +29,7 @@ paths:
     - $ref: '#/components/parameters/DriveId'
     get:
       tags:
-      - DriveItems
+      - Drive Items
       summary: List children of root
       operationId: listDriveRootChildren
       responses:
@@ -45,7 +45,7 @@ paths:
     - $ref: '#/components/parameters/ItemId'
     get:
       tags:
-      - DriveItems
+      - Drive Items
       summary: Get driveItem by id
       operationId: getDriveItem
       responses:
@@ -53,7 +53,7 @@ paths:
           description: OK
     patch:
       tags:
-      - DriveItems
+      - Drive Items
       summary: Update driveItem
       operationId: updateDriveItem
       requestBody:
@@ -67,7 +67,7 @@ paths:
           description: OK
     delete:
       tags:
-      - DriveItems
+      - Drive Items
       summary: Delete driveItem
       operationId: deleteDriveItem
       responses:
@@ -79,7 +79,7 @@ paths:
     - $ref: '#/components/parameters/ItemId'
     get:
       tags:
-      - DriveItems
+      - Drive Items
       summary: List children of driveItem
       operationId: listDriveItemChildren
       responses:
@@ -91,7 +91,7 @@ paths:
                 $ref: '#/components/schemas/GenericList'
     post:
       tags:
-      - DriveItems
+      - Drive Items
       summary: Create folder in driveItem
       operationId: createFolder
       requestBody:
@@ -109,7 +109,7 @@ paths:
     - $ref: '#/components/parameters/ItemId'
     get:
       tags:
-      - DriveItems
+      - Drive Items
       summary: Download file content
       operationId: downloadDriveItemContent
       responses:
@@ -122,7 +122,7 @@ paths:
                 format: binary
     put:
       tags:
-      - DriveItems
+      - Drive Items
       summary: Upload file content (small file replace)
       operationId: uploadDriveItemContent
       requestBody:
@@ -143,7 +143,7 @@ paths:
     - $ref: '#/components/parameters/ItemId'
     post:
       tags:
-      - DriveItems
+      - Drive Items
       summary: Copy driveItem
       operationId: copyDriveItem
       requestBody:
@@ -156,6 +156,19 @@ paths:
         '202':
           description: Accepted
 components:
+  parameters:
+    DriveId:
+      in: path
+      name: driveId
+      required: true
+      schema:
+        type: string
+    ItemId:
+      in: path
+      name: itemId
+      required: true
+      schema:
+        type: string
   schemas:
     GenericList:
       type: object
@@ -168,19 +181,6 @@ components:
     GenericObject:
       type: object
       additionalProperties: true
-  parameters:
-    ItemId:
-      in: path
-      name: itemId
-      required: true
-      schema:
-        type: string
-    DriveId:
-      in: path
-      name: driveId
-      required: true
-      schema:
-        type: string
   securitySchemes:
     bearerAuth:
       type: http
