@@ -34,13 +34,14 @@ tags:
 - File Storage
 - File
 - Microsoft
-- Microsoft-365
+- Microsoft 365
 tags_raw:
 - Cloud Storage
 - File Storage
 - Files
 - Microsoft
 - Microsoft 365
+- Microsoft-365
 url: https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage
 created: '2024-01-01'
 modified: '2026-05-19'
@@ -109,8 +110,6 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/
   baseURL: https://graph.microsoft.com/v1.0/
   tags:
-  - DriveItems
-  tags_raw:
   - Drive Items
   properties:
   - type: OpenAPI

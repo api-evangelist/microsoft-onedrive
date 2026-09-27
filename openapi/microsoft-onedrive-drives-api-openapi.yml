@@ -66,13 +66,6 @@ paths:
         '200':
           description: OK
 components:
-  parameters:
-    DriveId:
-      in: path
-      name: driveId
-      required: true
-      schema:
-        type: string
   schemas:
     GenericList:
       type: object
@@ -85,6 +78,13 @@ components:
     GenericObject:
       type: object
       additionalProperties: true
+  parameters:
+    DriveId:
+      in: path
+      name: driveId
+      required: true
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http
