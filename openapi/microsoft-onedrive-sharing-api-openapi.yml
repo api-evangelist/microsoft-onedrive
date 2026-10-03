@@ -94,15 +94,15 @@ components:
       type: object
       additionalProperties: true
   parameters:
-    DriveId:
-      in: path
-      name: driveId
-      required: true
-      schema:
-        type: string
     ItemId:
       in: path
       name: itemId
+      required: true
+      schema:
+        type: string
+    DriveId:
+      in: path
+      name: driveId
       required: true
       schema:
         type: string
