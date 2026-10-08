@@ -119,6 +119,12 @@ apis:
   - type: Reference
     url: https://learn.microsoft.com/en-us/graph/api/resources/onedrive
 common:
+- type: Plans
+  url: plans/microsoft-onedrive-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/microsoft-onedrive-rate-limits.yml
+- type: FinOps
+  url: finops/microsoft-onedrive-finops.yml
 - type: VulnerabilityDisclosure
   url: security/microsoft-onedrive-vulnerability-disclosure.yml
 - type: PublicAPIsListing
