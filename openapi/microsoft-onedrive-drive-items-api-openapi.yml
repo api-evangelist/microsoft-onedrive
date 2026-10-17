@@ -157,22 +157,19 @@ paths:
           description: Accepted
 components:
   parameters:
-    DriveId:
-      in: path
-      name: driveId
-      required: true
-      schema:
-        type: string
     ItemId:
       in: path
       name: itemId
       required: true
       schema:
         type: string
+    DriveId:
+      in: path
+      name: driveId
+      required: true
+      schema:
+        type: string
   schemas:
-    GenericObject:
-      type: object
-      additionalProperties: true
     GenericList:
       type: object
       properties:
@@ -180,6 +177,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+    GenericObject:
+      type: object
       additionalProperties: true
   securitySchemes:
     bearerAuth:
