@@ -82,7 +82,7 @@
     - alpha
     in_cloud: true
     builder: unknown (community connector; contributor not in the record)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: microsoft-onedrive-fivetran
   label: Fivetran
@@ -108,5 +108,5 @@
     - connectors/files/one-drive
     vendor_link: https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
