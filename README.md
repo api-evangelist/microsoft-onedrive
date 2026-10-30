@@ -1,4 +1,4 @@
-# Microsoft OneDrive (microsoft-onedrive)
+# Microsoft OneDrive
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,81 +66,125 @@
 
 Microsoft OneDrive is a cloud-based file storage and synchronization service. It provides APIs through Microsoft Graph for accessing, managing, and sharing files and folders stored in OneDrive personal and OneDrive for Business.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/microsoft-onedrive/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/microsoft-onedrive/refs/heads/main/apis.yml)
+**Areas:** Cloud Storage · File Storage · File · Microsoft · Microsoft 365
 
-## Scope
+## Microsoft OneDrive on APIs.io
 
-- **Type:** Index
+Everything profiled for Microsoft OneDrive is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/microsoft-onedrive/](https://apis.io/providers/microsoft-onedrive/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- Cloud Storage
-- File Storage
-- Files
-- Microsoft
-- Microsoft 365
+- [OneDrive File Picker](https://apis.io/apis/microsoft-onedrive/file-picker/) — The OneDrive File Picker is a JavaScript SDK that provides a pre-built UI component for selecting files from OneDrive within web applications. It handles…
+- [Microsoft OneDrive Drives API](https://apis.io/apis/microsoft-onedrive/microsoft-onedrive-drives-api/) — The Drives API from Microsoft OneDrive — 4 operation(s) for drives.
+- [Microsoft OneDrive Sharing API](https://apis.io/apis/microsoft-onedrive/microsoft-onedrive-sharing-api/) — The Sharing API from Microsoft OneDrive — 4 operation(s) for sharing.
+- [OneDrive](https://apis.io/apis/microsoft-onedrive/onedrive/) — File Sharing and Storage
+- [Microsoft OneDrive Drive Items API](https://apis.io/apis/microsoft-onedrive/microsoft-onedrive-drive-items-api/) — The Drive Items API from Microsoft OneDrive — 6 operation(s) for drive items.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-01-01
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Microsoft Graph OneDrive API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Microsoft Graph OneDrive API provides programmatic access to OneDrive personal and OneDrive for Business file storage. Developers can upload, download, search, and share files and folders, manage permissions, track changes with delta queries, and create sharing links. The API supports large file uploads with resumable sessions and real-time notifications via webhooks.
+- [Microsoft Onedrive Agentic Access](https://apis.io/agentic-access/microsoft-onedrive/microsoft-onedrive-agentic-access/)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/onedrive/developer/rest-api/](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/)
-- **Base URL:** `https://graph.microsoft.com/v1.0/`
+#### Collections (4)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Cloud Storage
-- File Storage
-- Files
-- Microsoft Graph
+- [Microsoft OneDrive API (Microsoft Graph)](https://apis.io/collections/microsoft-onedrive/open-microsoft-onedrive/)
+- [Microsoft OneDrive API (Microsoft Graph) DriveItems API](https://apis.io/collections/microsoft-onedrive/open-microsoft-onedrive-driveitems-api/)
+- [Microsoft OneDrive API (Microsoft Graph) DriveItems Drives API](https://apis.io/collections/microsoft-onedrive/open-microsoft-onedrive-drives-api/)
+- [Microsoft OneDrive API (Microsoft Graph) DriveItems Sharing API](https://apis.io/collections/microsoft-onedrive/open-microsoft-onedrive-sharing-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/)
-- [Reference](https://learn.microsoft.com/en-us/graph/api/resources/onedrive)
-- [OpenAPI](openapi/microsoft-onedrive-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/microsoft-onedrive.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-onedrive.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### OneDrive File Picker
+- [Microsoft Onedrive Authentication](https://apis.io/security/microsoft-onedrive/microsoft-onedrive-authentication/)
+- [Microsoft Onedrive Domain Security](https://apis.io/security/microsoft-onedrive/microsoft-onedrive-domain-security/)
+- [Microsoft Onedrive Vulnerability Disclosure](https://apis.io/security/microsoft-onedrive/microsoft-onedrive-vulnerability-disclosure/)
 
-The OneDrive File Picker is a JavaScript SDK that provides a pre-built UI component for selecting files from OneDrive within web applications. It handles authentication, file browsing, and selection, returning file metadata and download URLs to the calling application without requiring direct API integration.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/](https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/)
+Published plans, tiers and prices.
 
-#### Tags
+- [Microsoft Onedrive Plans Pricing](https://apis.io/plans/microsoft-onedrive/microsoft-onedrive-plans-pricing/)
 
-- File Picker
-- Files
-- UI Component
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://learn.microsoft.com/en-us/onedrive/developer/controls/file-pickers/)
-- [Postman Collection](collections/microsoft-onedrive.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-onedrive.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Microsoft Onedrive Rate Limits](https://apis.io/rate-limits/microsoft-onedrive/microsoft-onedrive-rate-limits/)
 
-## Common Properties
+#### FinOps (1)
 
-- [GitHub Organization](https://github.com/OneDrive)
-- [Portal](https://portal.azure.com/)
+What the API costs to run, by operation.
+
+- [Microsoft Onedrive Finops](https://apis.io/finops/microsoft-onedrive/microsoft-onedrive-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage)
 - [Documentation](https://learn.microsoft.com/en-us/onedrive/developer/)
-- [Authentication](https://learn.microsoft.com/en-us/graph/auth/)
-- [S D Ks](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview)
-- [Terms of Service](https://www.microsoft.com/en-us/legal/terms-of-use)
-- [Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement)
 - [Support](https://support.microsoft.com/)
-- [Integrations](https://www.microsoft.com/en-us/marketplace)
+- [Terms of service](https://www.microsoft.com/en-us/legal/terms-of-use)
+- [Privacy policy](https://privacy.microsoft.com/en-us/privacystatement)
+- [GitHub](https://github.com/OneDrive)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 35.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 69.6 |
+| Contract quality | 42.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 50.0 |
+| Access clarity | 28.9 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 25.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/microsoft-onedrive/](https://apis.io/providers/microsoft-onedrive/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Microsoft OneDrive: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/microsoft-onedrive/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
